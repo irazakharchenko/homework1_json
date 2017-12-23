@@ -32,7 +32,21 @@ public class JsonObject extends Json {
     }
 
     public void add(JsonPair jsonPair) {
-        ajpairs.add(jsonPair);
+
+        //ajpairs.add(jsonPair);
+        boolean coincidence = false;
+        JsonPair jp;
+        for (int i = 0; i < ajpairs.size(); i++) {
+            jp = ajpairs.get(i);
+            if (jp.key == jsonPair.key){
+                ajpairs.set(i, jsonPair);
+                coincidence = true;
+
+            }
+
+        }
+        if(!coincidence)
+            ajpairs.add(jsonPair);
     }
 
     public Json find(String name) {
