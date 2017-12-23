@@ -36,13 +36,7 @@ public class JSONApp {
 
 
     public static JsonObject sessionResult() {
-        /*
-        "{'name': 'Andrii', 'surname': 'Rodionov', 'year': 2, 'exams': [" +
-                        "{'course': 'OOP', 'mark': 3, 'passed': true}," +
-                        "{'course': 'English', 'mark': 5, 'passed': true}," +
-                        "{'course': 'Math', 'mark': 2, 'passed': false}" +
-                        "]}";
-         */
+
         JsonPair name = new JsonPair("name", new JsonString("Andrii"));
         JsonPair surname = new JsonPair("surname", new JsonString("Rodionov"));
         JsonPair year = new JsonPair("year", new JsonNumber(2));

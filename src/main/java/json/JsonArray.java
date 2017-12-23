@@ -1,5 +1,6 @@
 package json;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -13,6 +14,11 @@ public class JsonArray extends Json {
     public JsonArray(Json... jsons) {
         this.jsons = Arrays.asList(jsons);
     }
+
+    public JsonArray(List<Json> array_exams) {
+        this.jsons = array_exams;
+    }
+
 
     @Override
     public String toJson() {

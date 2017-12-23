@@ -10,8 +10,8 @@ public class JsonObject extends Json {
 
     public JsonObject(JsonPair... jsonPairs) {
 
-        for (JsonPair jp:
-             jsonPairs) {
+        for (JsonPair jp :
+                jsonPairs) {
             this.add(jp);
         }
     }
@@ -20,13 +20,13 @@ public class JsonObject extends Json {
     public String toJson() {
         StringBuilder to_return = new StringBuilder();
         to_return.append('{');
-        for (JsonPair jp:
-             ajpairs) {
+        for (JsonPair jp :
+                ajpairs) {
             to_return.append(jp.key).append(": ").append(jp.value.toJson().toString()).append(", ");
 
         }
-        if(to_return.length() > 1)
-            to_return.delete(to_return.length()-2, to_return.length());
+        if (to_return.length() > 1)
+            to_return.delete(to_return.length() - 2, to_return.length());
         to_return.append('}');
         return to_return.toString();
     }
@@ -37,21 +37,20 @@ public class JsonObject extends Json {
         JsonPair jp;
         for (int i = 0; i < ajpairs.size(); i++) {
             jp = ajpairs.get(i);
-            if (jp.key.equals(jsonPair.key)){
+            if (jp.key.equals(jsonPair.key)) {
                 ajpairs.set(i, jsonPair);
                 coincidence = true;
-
             }
 
         }
-        if(!coincidence)
+        if (!coincidence)
             ajpairs.add(jsonPair);
     }
 
     public Json find(String name) {
-        for (JsonPair jp:
-             ajpairs) {
-            if(jp.key.equals( name))
+        for (JsonPair jp :
+                ajpairs) {
+            if (jp.key.equals(name))
                 return jp.value;
 
         }
@@ -60,9 +59,9 @@ public class JsonObject extends Json {
 
     public JsonObject projection(String... names) {
         JsonObject to_return = new JsonObject();
-        for (String name:
-             names) {
-            if(find(name) != null)
+        for (String name :
+                names) {
+            if (find(name) != null)
                 to_return.add(new JsonPair(name, find(name)));
         }
         return to_return;
