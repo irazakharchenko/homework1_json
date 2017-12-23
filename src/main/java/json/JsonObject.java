@@ -33,7 +33,6 @@ public class JsonObject extends Json {
 
     public void add(JsonPair jsonPair) {
 
-        //ajpairs.add(jsonPair);
         boolean coincidence = false;
         JsonPair jp;
         for (int i = 0; i < ajpairs.size(); i++) {
