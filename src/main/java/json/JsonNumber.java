@@ -12,6 +12,7 @@ public class JsonNumber extends Json {
 
     @Override
     public String toJson() {
+        //System.out.println(number);
         return number.toString();
     }
 }

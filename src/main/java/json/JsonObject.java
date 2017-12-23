@@ -22,7 +22,10 @@ public class JsonObject extends Json {
         to_return.append('{');
         for (JsonPair jp :
                 ajpairs) {
-            to_return.append(jp.key).append(": ").append(jp.value.toJson().toString()).append(", ");
+
+                to_return.append(jp.key).append(": ").append(jp.value.toJson()).append(", ");
+
+
 
         }
         if (to_return.length() > 1)

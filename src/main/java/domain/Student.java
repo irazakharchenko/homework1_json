@@ -15,7 +15,9 @@ public class Student extends BasicStudent {
     private Tuple<String, Integer>[] exams;
 
     public Student(String name, String surname, Integer year, Tuple<String, Integer>... exams) {
-        super(name, surname, year);
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
         this.exams = exams;
     }
 
@@ -23,7 +25,7 @@ public class Student extends BasicStudent {
         JsonObject to_return = new JsonObject(new JsonPair("name", new JsonString(name)),
                 new JsonPair("surname", new JsonString(surname)), new JsonPair("year", new JsonNumber(year)));
         List<Json> array_exams = new ArrayList<>();
-        //JsonObject[] array_exams = new JsonObject[exams.length];
+
         JsonObject jobj_exam;
 
         for (Tuple exam:
@@ -37,9 +39,10 @@ public class Student extends BasicStudent {
             array_exams.add(jobj_exam);
 
         }
-        //System.out.println(new JsonArray(array_exams).toJson());
+
+
         to_return.add(new JsonPair("exams", new JsonArray(array_exams)));
-        //System.out.println(to_return.toJson());
+
         return to_return;
     }
 }

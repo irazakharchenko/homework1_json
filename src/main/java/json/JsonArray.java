@@ -17,6 +17,7 @@ public class JsonArray extends Json {
 
     public JsonArray(List<Json> array_exams) {
         this.jsons = array_exams;
+        //System.out.println(this.toJson());
     }
 
 
